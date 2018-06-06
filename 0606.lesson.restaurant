@@ -1,0 +1,44 @@
+<script>
+     // DATE / CONSTANTE
+    const NAME_PIZZA = "Pizza 4 cheeses"
+    const NAME_WINGS = "Aripoare cu sos"
+    const NAME_COLA = "Coca Cola (whit lemon)"
+   
+
+    const PRICE_PIZZA = 65.50;  //MDL
+    const PRICE_WINGS = 25.00;  //MDL
+    const PRICE_COLA = 15.00;  //MDL
+
+    //afisem meniul
+    alert(
+         "\u2615 " + NAME_PIZZA + "  - " + PRICE_PIZZA + " lei" + "\n" +
+         "\u2615 " + NAME_WINGS + "  - " + PRICE_WINGS + " lei" + "\n" +
+         "\u2615 " + NAME_COLA + "  - " + PRICE_COLA + " lei" 
+         );  // cind se pune gilimele CU SPATIU !!! face spatiu ! retine si \n - are functia de <br>
+    
+
+    //citim date
+    var n_pizza = prompt("How many pizzas?");
+    var n_wings = prompt("How many wings?");
+    var n_cola = prompt("How many cola?");
+
+    //calcule
+    var cost_pizza = n_pizza * PRICE_PIZZA;
+    var cost_wings = n_wings * PRICE_WINGS;
+    var cost_cola = n_cola * PRICE_COLA;
+
+    var total = cost_pizza + cost_wings + cost_cola;
+
+    //afisare
+    alert( cost_pizza + cost_wings + cost_cola +" lei");
+
+    alert(
+        cost_pizza + " lei \n" + 
+        cost_wings + " lei \n" + 
+        cost_cola  + " lei \n" + 
+        "##################\n" +
+        total + " lei"
+    );
+
+
+</script>
