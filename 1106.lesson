@@ -1,0 +1,45 @@
+<script>
+    var temperatura = prompt("Ce temperatura (celsus)??");  ///<<"30C"
+
+    var temperatura_farengheit = ((temperatura*9)/5)+32;
+
+    alert (temperatura_farengheit + "farengheit" );
+   
+   const USER ="admin";
+   const PASS ="1234";
+
+   var user = prompt ("your login ?");
+   var pass = prompt ("your password?");
+   var age = prompt ("your age ?");
+   var blocked = false;
+   var blocked_age = 13;
+
+   var autorized = user == USER && pass == PASS && !blocked && age >= blocked_age;
+   alert(autorized);
+/////
+
+   var am_portmoneu = true;
+   var am_card_bancar = false;
+   var total = 500;
+   var bani = prompt("Citi bani ai ?");
+
+   var pot_achita = am_portmoneu || am_card_bancar && bani >= total;
+
+   alert("Pot cumpara? " + pot_achita );
+
+////
+   var am_portmoneu = true;
+   var am_card_bancar = false;
+   var total = 500;
+
+   var bani_port = prompt("Citi bani ai in portmoneu ?");
+   var bani_card = prompt("Citi bani ai pe card?");
+
+   var pot_achita = ( am_portmoneu * bani_port + am_card_bancar * bani_card ) >= total;
+
+   alert("Pot cumpara? " + pot_achita );
+
+
+
+
+</script>
