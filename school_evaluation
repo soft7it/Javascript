@@ -1,0 +1,36 @@
+<script>
+    //date conctante
+    const LESSON_LINGUA = "Limba Engleza";
+    const LESSON_MATEMATIC = "Matematica";
+    const LESSON_FIZICA = "Fizica";
+    const LESSON_CHIMIA = "Chimia";
+    const LESSON_INFORMATIC = "Informatica";
+    const LESSON_ALL_MEDIA_T = "Nota medie trimestriala";
+    const LESSON_ALL_MEDIA_Y = "Nota medie anuala";
+
+    const NOTE_LINGUA = 7.9;    
+    const NOTE_MATEMATIC = 8.9;
+    const NOTE_FIZICA = 9.3;
+    const NOTE_CHIMIA = 9.5;
+    const NOTE_INFORMATIC = 10;
+
+    //AFISEM LECTILE SI REUSITELE
+    alert(
+        "\u2615" + LESSON_LINGUA + " - " + NOTE_LINGUA + " " + "\n" +
+        "\u2615" + LESSON_MATEMATIC + " - " + NOTE_MATEMATIC + " " + "\n" +
+        "\u2615" + LESSON_FIZICA + " - " +  NOTE_FIZICA + " " + "\n" +
+        "\u2615" + LESSON_CHIMIA + " - " + NOTE_CHIMIA + " " + "\n" +
+        "\u2615" + LESSON_INFORMATIC + " - " + NOTE_INFORMATIC + " "        
+
+    );
+
+    //calcule medii tremestru
+    var medii_tr = (NOTE_LINGUA + NOTE_MATEMATIC + NOTE_FIZICA + NOTE_CHIMIA + NOTE_INFORMATIC)/0.2;
+
+    alert( LESSON_ALL_MEDIA_T + " - " + medii_tr);
+
+    //calcule medii anual
+    var medii_year = (NOTE_LINGUA + NOTE_MATEMATIC + NOTE_FIZICA + NOTE_CHIMIA + NOTE_INFORMATIC)/0.6;
+
+    alert(LESSON_ALL_MEDIA_Y + " - " + medii_year);
+</script>
