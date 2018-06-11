@@ -1,0 +1,47 @@
+<script>
+    // DATE / CONSTANTE
+   const NAME_GAS = "GAS 95";  
+   const NAME_TANK = "5 liters"; 
+  
+
+   const PRICE_GAS = 19.15;  //MDL
+   const VOL_GAS = 5;  //litre  
+
+   //afisem meniul
+   alert(
+        "\u26FD " + NAME_GAS + "  - " + PRICE_GAS + " lei " + "\n" +
+        "\u26FD " + NAME_TANK + "  - " + " remain" + "\n"  
+        );  // cind se pune gilimele CU SPATIU !!! face spatiu ! retine si \n - are functia de <br>
+   
+
+   //citim date
+   var n_gas = prompt("How many liters do you want ?");   
+
+   //calcule
+   var cost_gas = n_gas * PRICE_GAS;
+   var total = cost_gas;
+
+   //afisare
+   alert( cost_gas + " lei");
+
+   alert(
+       cost_gas + " lei \n" +         
+       "##################\n" +
+       "total cost" + "  " + total + " lei"
+   );
+
+   //calcule cit este in rezervor
+
+   var n_gas = prompt("How many liters do you want ?");
+   
+
+   var li_rezervor = n_gas + VOL_GAS;
+
+   //var l_rezervor = n_gas + VOL_GAS;  
+  
+
+   //afisare
+   alert(" Total litres" + li_rezervor);
+
+   
+</script>
