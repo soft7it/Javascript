@@ -1,0 +1,10 @@
+<script>// adaptivitate pagenii
+
+// w mobile |400| tablet| 800| pc
+var w = 1200;
+
+if(w> 800){
+    alert
+}
+
+</script>
