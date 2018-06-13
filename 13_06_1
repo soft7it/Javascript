@@ -1,0 +1,25 @@
+<script>// adaptivitate pagenii
+
+    // magig detecteaza ecranu dimesiunile
+
+    var w = 1200;
+    var h = 800;
+
+    // if/else - portret, album
+
+    if(w >= h){
+
+        alert("orizontal");
+
+    }else{
+        alert("vertical");
+    }
+
+    //if( confirm ("Care este domesiunea la album ?")){
+    //    var album = prompt ("Carei ?");
+   // }else{
+    //    alert("1200 daca nu ai stiut");
+    //}
+
+
+</script>
