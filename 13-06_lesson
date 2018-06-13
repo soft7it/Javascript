@@ -1,0 +1,121 @@
+<script>  //  Meniu sumam total cek
+ // ce este la dispozitie 
+ var portii_borsh = 3;
+ const PRET_BORSH =25.00;
+
+ var portii_salata = 1;
+ const PRET_SALATA = 7.50; 
+
+ var portii_fasole = 5;
+ const PRET_FASOLE = 15.75;
+
+ var pahare_copot = 2;
+ var pahare_apa = 10;
+
+ var total = 0;
+
+
+
+ ////// meniu interactiv //////////////
+
+if( confirm("Dorit borsh ?")){ // daca apasa Ok
+
+var portii = prompt ("Cite portii ?");
+
+if( portii_borsh >= portii){
+    alert(" Ok, luatui - " + portii + " portii");
+
+    alert( +portii * PRET_BORSH + " LEI  ATIT ESTE COSTUL") ;
+
+    total+= PRET_BORSH * portii;  // sumam cecul
+
+}else{
+    alert("Nu este atitea portii Sorry.");
+}
+
+}else{
+    alert( " Bine !");
+
+}
+
+
+if( confirm("Dorit SALATA ?")){ // daca apasa Ok
+
+var portii = prompt ("Cite portii ?");
+
+if( portii_salata >= portii){
+    alert(" Ok, luatui - " + portii + " portii");
+
+    alert( +portii * PRET_SALATA + " LEI  ATIT ESTE COSTUL") ;
+
+    total+= PRET_SALATA * portii;  // sumam cecul
+    
+}else{
+    alert("Nu este atitea portii Sorry.");
+}
+
+}else{
+    alert( " Bine !");
+
+}
+
+
+if( confirm("Dorit FASOLE ?")){ // daca apasa Ok
+
+var portii = prompt ("Cite portii ?");
+
+if( portii_fasole >= portii){
+    alert(" Ok, luatui - " + portii + " portii");
+
+    alert( +portii * PRET_FASOLE + " LEI  ATIT ESTE COSTUL") ;
+
+    total+= PRET_FASOLE * portii;  // sumam cecul
+
+    alert(total + "LEI");
+    
+}else{
+    alert("Nu este atitea portii Sorry.");
+}
+
+}else{
+    alert( " Bine !");
+
+}
+ ////// meniu interactiv //////////////
+
+
+
+</script>
+
+
+
+
+<script>    /////  intrebare de Nota ta.
+
+
+
+ var nota = prompt("Nota ta generala");
+
+ if(nota >= 7 ){
+    alert("Bravo!");
+}else{
+    alert("Sorry !");
+}
+
+                    
+
+</script>
+
+<script>
+if(expression){
+    // blocul A
+}else{
+    //blocul B
+}
+
+
+                 | ---> A(true)
+----> conditie ? |
+                 | ---> B (fals)
+
+</script>
