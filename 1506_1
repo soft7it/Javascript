@@ -1,0 +1,21 @@
+<script>
+// Data base
+var login_corect = "iurik_999";
+var pass_corct = "99iu";
+
+// INPUT
+var login = prompt("your login:");
+
+if( login == login_corect ) {
+ var pass = prompt("your password:");
+    if( pass == pass_corct){
+      alert("Acces garantat !");
+    }else{
+      alert("Password error");
+    }
+}else{
+    alert("Login incorect !");
+}
+
+
+</script>
