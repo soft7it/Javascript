@@ -1,0 +1,20 @@
+<script>
+
+        var n = 1;
+        
+        while( n <= 8 ){
+            //if + else
+         document.write( "#");
+            
+         n++;
+        }
+        
+</script>
+
+###*###*###  cum sa afisam
+##**##**   cum sa afisam
+
+<img src="" alt="">
+200*150
+[..][..][..]
+[..........]
