@@ -1,0 +1,29 @@
+<script>
+
+var n = 10;
+
+while( n >= 0 ){
+ document.write( "<h2>" + n + "<h2>");
+// ordinea conteaza
+ n--;
+}
+
+</script>
+/////////////////////////////////
+
+
+
+<script>
+
+var n = 10;
+
+while( n <= 10 ){
+ document.write( "<h2>" + n + "<h2>");
+// ordinea conteaza
+ n--;
+}
+
+
+
+
+</script>
