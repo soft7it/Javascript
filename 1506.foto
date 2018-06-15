@@ -1,0 +1,48 @@
+<script>
+
+        var n = 1;
+        
+        while( n <= 10 ){
+            if( n % 2 == 1 ){  //afiseaza numere impare
+         document.write( "<h2>" + n + "</h2>");
+         
+         }else{
+             document.write("<h4>" + n + "</h4>");
+         }
+        // ordinea conteaza
+         n++;
+        }
+        
+        </script>
+        
+        -////////////////////<script>
+
+        var n = 12;
+        
+        while( n >= 1 ){
+            
+         document.write( "<img src='https://picsum.photos/200/150?id=" +n+ "'>");
+            if( (n - 1) % 3 == 0 ){  // ipmartr foto si le pune cite 3.
+                document.write('<br>');
+            }      
+         n--;
+        }
+        
+</script>
+
+-//////////// foto
+
+<script>
+
+        var n = 1;
+        
+        while( n <= 12 ){
+            
+         document.write( "<img src='https://picsum.photos/200/150?id=" +n+ "'>");
+            if( n % 3 == 0 ){  // ipmartr foto si le pune cite 3.
+                document.write('<br>');
+            }      
+         n--;
+        }
+        
+</script>
