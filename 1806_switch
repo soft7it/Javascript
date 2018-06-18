@@ -1,0 +1,151 @@
+//  HW - do while;    do{code to repeat}  while(expression);
+//  www.codecombat.com  - jok de antrenare gindire
+//   code.org  pentru progaming
+
+
+switch ( expression ) { // === compara valoarea strikt si identic.
+    case value1:code;break; // break -> paraseste constructia.
+    case value2:code;break;
+    case value3:code;break;
+    // alte cazuri
+    default:code;break;
+}
+
+////////////////////////////
+
+var day = prompt("A cita zi a saptaminii este azi ?");
+
+switch ( day ) {
+    case "1":alert("Mo");break;
+    case "2":alert("Tu");break;
+    case "3":alert("Wd");break;
+    case "4":alert("Th");break;
+    case "5":alert("Fr");break;
+    case "6":alert("Sa");break;
+    case "7":alert("Su");break;
+    // alte cazuri
+    default:alert("valoarea gresita!");break;
+}
+
+/////////////////////
+
+// niste produse alimentare la cantina.
+
+var pret_salata = 15;
+var pret_omleta = 25;
+var optiune;
+var total = 0;
+
+while ( optiune!="x") {
+
+optiune = prompt("Alege\n1) Salata\n2) Omleta");
+
+switch (optiune ) {
+    case "1":
+    alert("Ati ales \"Salata\".");
+    var a_salata = prompt("Cit doriti ?");
+    alert("Pretul este - " + a_salata * pret_salata + "lei");
+    total +=;// !!
+    break;
+
+    case "2":
+    alert("Ati ales \"Omleta\".");
+    var a_omleta = prompt("Cit doriti ?");
+    alert("Pretul este - " + a_omleta * pret_omleta + "lei");
+    total +=; //!!
+    break;
+  
+    // alte cazuri
+    default:alert("nu exista asa meniu!");break;
+}
+}
+
+////////////////////////////////
+
+// for
+
+for( start ; expression ; step){
+    // code repeat - cod mai intelegent
+}
+//////////////////////
+
+ start; 
+for(; expression ; ){
+    // code repeat - cod mai intelegent
+    step;
+}
+
+
+/////////////////
+start ;
+
+while( expression ){
+    // code to repeat
+    step;
+}
+////////////////////se vede in console +++
+
+
+for( var n = 1 ; n<=10 ; n++){
+    // code repeat - cod mai intelegent
+    console.log(n);
+}
+
+ ///////////////////////se vede in console ---
+
+for( var n = 10 ; n>=1 ; n--){
+    // code repeat - cod mai intelegent
+    console.log(n);
+}
+
+
+/////////////////////
+
+for( var n = 1 ; n<=10 ; n++){
+    // code repeat - cod mai intelegent
+    if(n%2){ // numere impare ===  sau daca punem(n%2-1) apare pare
+    console.log(n);
+}}
+
+/////////////////////
+// functions  ---> o comanta care se poate actiona ! 
+// reprezinta un bloc de cod care poate fi: 01 - apelat. si de multe or sa se execute pot avea:
+// 1 nume (id),
+// 2 primu argumenti, 
+// 3 returna valori, 
+// 4 afecteaza vizibilitatea varialibilor (zone de vizibilitate) + (p/u protejare - o zona);
+
+
+//alert
+//.write
+//.log
+//prompt
+
+
+
+function f_name (argumen1, argument2, ....){
+    // code to execute
+    return value;
+}
+
+
+function alert(text){
+    // fa o fereastra
+}
+
+prompt("mesaj")   --> introdus de user
+
+////////////
+
+ //declaram functia
+function hello (){
+    alert ( "Salutare !!!!" );
+   
+}
+ //apelam functia
+hello();
+hello();
+hello();
+
+
+
