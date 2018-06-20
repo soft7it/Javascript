@@ -1,0 +1,143 @@
+<script>
+
+function hi( name ){
+    if( name == undefined ){
+        console.log("Salut!!!");
+    }else{
+
+    console.log("Salut" + name + " !!!");
+  }
+}
+
+function bye( name ){
+    if( name == undefined ){
+        console.log("Hai, davai!");
+    }else{
+
+    console.log("Hai, davai!" + name + " !!!");
+  }
+}
+
+
+//var ora = prompt("Cit este ceasul ?");
+//if( ora <= 12 ){
+ //   hi();
+//}else{
+ //   bye();
+
+//}
+
+hi(" Gita");
+bye(" Vitali");
+
+</script>
+////////////////////////
+<script>
+
+function mult ( a, b ){ // 
+    var result = a * b;
+    alert( a + " inmultiti la " + b + " = " + result );
+}
+
+mult( 10, 20 );  //  var a = 10; var b = 20;
+</script>
+//////////////////////
+<script>
+
+function mult ( a, b ){
+    if( b == undefined || a == undefined ){
+        alert("Nu o venit  valoarea");
+    }
+    
+    else{
+    var result = a * b;
+    alert( a + " inmultiti la " + b + " = " + result );
+}
+}
+
+mult( 10, 20 );
+mult();
+
+</script>
+
+///////////////
+
+<script>
+
+function mult ( a, b ){
+    if( b != undefined && a != undefined ){
+        var result = a * b;
+    alert( a + " inmultiti la " + b + " = " + result );
+    }
+    
+    else{
+    alert("Nu o venit  valoarea");
+}
+}
+
+mult( 10, 20 );
+mult();
+
+</script>
+
+//////////////////////
+
+<script>
+var x =10;
+function f (){
+    alert(x);
+}
+
+f();
+
+</script> /
+////////////////////
+
+<script>
+//var x =10;
+function f (){
+    var x = 1000;  // se acesat cu ceea locala
+    alert(x);
+}
+
+f();
+alert(x);  // se acesat cu ceea globala
+
+</script>
+/////////////
+
+<script>
+
+function parent(){
+    alert("Functia Parinte");
+    function child(){
+        alert("Functia Copil");
+    }
+    child();
+}
+// Functia Parinte
+parent();
+
+
+</script>
+
+///////////////
+
+<script>
+
+function convertesti( suma, valuta_sursa, valuta_destinatie){
+    // ..........
+    alert  (  );
+}
+    ///////
+    converteste (1000, "mdl", "usd")  // -> 50usd
+    converteste (2000, "eur", "mdl")  // -> 40000usd
+
+
+</script>
+
+
+//////////////
+
+
+
