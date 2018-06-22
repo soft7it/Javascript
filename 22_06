@@ -1,0 +1,117 @@
+<script>
+    function f(){
+        return 100;
+    }
+
+alert ( f() + f () );
+
+</script>
+
+
+////////////////////
+
+<script>
+    function f(a,b){
+        return a + b;
+    }
+
+alert ( f(10,  f(20,30)) );
+
+</script>
+
+///////////////
+
+<h1><a href="url">TITLU</a></h1>
+
+
+<script>
+    function a(text, url){
+        return "<a href="+url+">" + text + "</a>"
+    }
+
+    function h1(text){
+        return "<h1>" + text + "</h1>";
+    }
+
+document.write (a("Google","http://google.com"));
+document.write (h1("This is a title") );
+document.write (h1(a("Google","http://google.com")) );
+
+</script>
+
+///////////////////////
+
+<script>  
+    function nota_medie( n1, n2, n3 ){
+
+        return Math.round( (n1+n2+n3)/3 ); 
+
+    }
+
+alert( nota_medie(10,8,7) );
+
+
+</script>
+
+/////////////
+
+
+<script>  
+    function isGoodStudient( mark ){
+//  ->7+;
+//  -> 6:
+         return mark >=7 ; 
+}
+ //        if (mark >=7){
+  //           true;
+   //      }else{
+   //          false;        }    }
+
+ // var x = isGoodStudient(9) ;
+
+ //   if(x == true){
+  //      alert( "Invata bine");
+  //  }else{
+  //     alert(" invata rau ");   /  } 
+
+ if ( isGoodStudient(9) ){
+     alert("invata bie");
+ }else{
+     alert("invata rau");
+    }
+
+
+</script>
+
+//////////
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <br>
+
+    <button onclick="move();">MOVE</button>
+
+<script>
+    function move(){
+        document.body.innerHTML = '<br>' + document.body.innerHTML;
+    }
+      
+
+
+</script>
+
+
+</body>
+</html>
+
+////////////////  hw 5 pasi + afisarea pasilor in numere
+
