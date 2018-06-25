@@ -1,0 +1,39 @@
+///////// Phone form  ////////////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone form</title>
+</head>
+<body>
+   <form action="">
+
+    <h1>Create Acount</h1>
+    <hr>
+    <input type="text" name="" placeholder="you full name" id=""><br>
+    <input type="text" name="" placeholder="you email" id=""><br>
+    <hr>
+
+    <h2>Contact Phone Number</h2>
+    <input type="text" name="" placeholder="phone 1" id=""><br>
+
+    <button onclick="addphone();" type="button">+Add Phone</button><br><br>
+
+  </form>
+
+    <script>
+        var i = 1;
+        function addphone(){
+           // alert();
+            i++;
+            if( i <=5 ){
+            document.forms[0].innerHTML += '<input type="text" name="" placeholder="phone ' + i + '"><br><br>'
+        }}
+    
+    </script>
+    
+</body>
+</html>
