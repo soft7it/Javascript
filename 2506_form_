@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Phone form</title>
+</head>
+<body>
+
+   <form action="">   
+       
+    font-size
+    <button onclick="increment();" type="button">+</button>
+    <input type="text" name="" value="10" id="">
+    <button onclick="decrement();"  type="button">-</button>px
+    <h1 style="font-size: 10px;">Hello World</h1>
+  </form>
+
+    <script>
+
+        var size = 10; // valoarea din input
+
+        
+     
+        function increment(){
+        if( size < 20) { 
+            size++;                  
+            var input = document.querySelector('input');
+            var h1 = document.querySelector('h1');
+            h1.style.fontSize = size + 'px';
+            input.value = size;
+            }
+           //alert(size);
+         
+        }
+        function decrement(){
+        if( size > 1) {
+            size--;        
+            var input = document.querySelector('input');
+            var h1 = document.querySelector('h1');
+            h1.style.fontSize = size + 'px';
+            input.value = size;
+            //alert(size);
+            }
+        }
+
+         //var i = 1;  
+      // i++;
+         //   if( i <=5 ){
+           // document.forms[0].innerHTML += '<input type="text" name="" placeholder="phone ' + i + '"><br><br>'
+        //}
+    </script>
+    
+</body>
+</html>
