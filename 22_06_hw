@@ -51,25 +51,23 @@
     <button onclick="move();">MOVE</button>
 
 <script>
+    var i = 0;
 
     function move(){ 
-
-            'use strict';    
-     document.body.innerHTML = '<br>' + document.body.innerHTML; 
-     
-        var i = 1;
-        
-     while(i <= 5)  {
-         
-         document.write( i + "</br>" + document.body.innerHTML);
+         i++; 
+             
+            if(i<=5){
+     document.body.innerHTML = i + '<br>' + document.body.innerHTML; 
+            
        
-         i++;
-
-  
-
+} 
       }
 
-        }
+        
+     </script>
+
+     </body>
+     </html>
 
 //////////////// hw 5 pasi + afisarea pasilor in numere  "<br>" +  
 
