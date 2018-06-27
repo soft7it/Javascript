@@ -1,0 +1,140 @@
+// callback  /closure
+
+
+// closure  -> function  -> functie inchise
+
+// timer  : 
+
+setInterval( funct, interval )  - functie facuta la careva timp.
+
+setTimeout( funct ,interval )  functie facuta dupa careva timp.
+
+
+clearInterval( id );  - anuleaza tarmele;
+clearTimeout( id );  - anuleaza tarmele;
+
+
+///////////////////////////////////////////
+
+    var n = -1;
+
+    function ticTac(){
+        n++;
+        console.log( n );
+    }
+
+    setInterval( ticTac, 1000);  // <<< callback / closure >>>
+
+/////////////////////////////////////////////
+
+<script>
+
+    var n = -1;
+
+    setInterval( function ticTac(){
+        n++;
+        console.log( n );
+    } , 1000);  // <<< callback / closure - functie inchisa - anonima >>>
+
+
+</script>
+
+/////////////////////////////////////////////
+
+//oop Object Oriented Programming
+
+
+    // Object -> Atom - un contaainer
+    // Object -> box / container: 
+    // prprietati ( variables )  / ce are!!
+    // metode ( functions )  / ce poate!!
+    
+        // 1) metoda literal
+    var car = {   //-este un obiect
+    // structure
+    // a) proprites
+    brand:"BMW",
+    model:"v8-4",
+    price:10000,
+    year: 2020,
+    
+    // b)metods()
+    beep: function(){
+        alert("Beep!!!");
+    }
+
+    }; 
+
+    console.log( car );
+    alert( car.brand ); //  intram pina la nivelul cerut
+
+    car.beep();  // cere car -> beep - functia so faca
+
+   /////////////
+   
+   <script>
+
+//user  -> propriet/method 
+
+    
+    var user = {   //-este un obiect
+    
+    login: "ionutz", 
+
+    about: function(){
+        console.log("I am a user !");
+        console.log("My login is " + this.login);  // adresare interior acestei cutii  - this
+
+    }
+    };
+    
+    //console.log(user);
+
+    //alert( user.names ); //  intram pina la nivelul cerut
+
+    //user.nashi();  // cere car -> beep - functia so faca
+
+    user.about();
+
+
+</script>
+
+///////////////////////////////////
+
+
+
+    
+    <script>
+
+// nested - imbricat
+ var microsoft_company = {
+     name: "Microsoft Corp",
+     founded: 1975,
+     owner: {  //  date in date facut obiect
+         name: "Bill Gates",
+         birth: 1955,
+         country: "USA",
+     },
+
+     about:function(){
+         alert("This is : " + this.name + " " + this.owner.name);
+     }
+
+     
+      }
+
+      microsoft_company.about();
+
+      alert( microsoft_company.owner.name );
+
+
+
+/////////////////////////////////////
+
+
+</script>
+
+xml !!
+json w3school - yutube !
+
+
