@@ -1,0 +1,91 @@
+ //es5 - clasele erau difinite prin functii !!!
+
+  // ES6++  - similar, C++, PHP, ...
+
+  // clasele -> shabloane de obiecte 
+
+  // class -> permit glogalizarea codurilor, structura unica  p/u m. multe obiecte.
+  // ccontainer -> rolul Type date
+  // fabrica dea crea obiecte.
+ ///////////////////////////////////////// 
+<script>
+    //Es6 -> declaram o clasa
+
+    // reprezinta o clasa pentru viitoarele obiecte.
+  
+  class Person{
+      // structura
+      constructor(name, year, study, citezen){  // intelege ca functie - linia de asamblare
+       var current_year = new Date().getFullYear(); // afiseaza anu automat.
+       this.name = name;
+       this.lastname = "Personalici"
+       this.age = current_year - year;
+       this.study = study;
+       this.citezen = citezen;
+
+      }
+      hello(){
+          alert("Hi!!");
+      }
+
+      who () {
+          alert("My name is " + this.name + " " + this.lastname)
+      }
+      
+  }
+
+  // creem obiecte de tipul Person
+
+  var p1 = new Person("Ivan", 1990, "medii", "canada");
+  var p2 = new Person("Maria", 1980, "profesionale", "germania");
+  var p3 = new Person("Vasilii", 1970, "academice", "englez");  
+    p2.hello();  // la toate - p - se poate de pus - helllo -
+    p2.who();
+  console.log(p1,p2,p3);
+
+</script>
+
+/////////////////////////
+
+<script>
+
+  
+  class Product{
+      // structura
+      constructor(brand, year, price, made, hard){  // intelege ca functie - linia de asamblare
+       
+       this.brand = brand;
+       this.year = year;
+       this.price = price;
+       this.made = made;
+       this.hard = hard;
+       // render() 
+      }
+      render(){
+          document.write('<img src="https://picsum.photos/300/300?image=0">' + '<h1>' + "Brand : " +  this.brand + '<br>' + "Produs : "  + this.year + '<br>'  + "Price : " + this.price + '<br>'  + "Made in :" + this.made + '<br>'  + "Memory : "  + this.hard + '<br>' + '</h1>')
+  }
+
+      }
+
+  
+
+  // creem obiecte de tipul Person
+
+  var prod1 = new Product("Apple", 2018, 999, "Canada", "1Tb");
+  var prod1 = new Product("HP", 2018, 599, "Japon", "1Tb");
+  var prod1 = new Product("Dell", 2018, 799, "China", "1Tb");
+
+
+ prod1.render();
+ prod2.render();
+ prod3.render();
+
+
+</script>
+
+//////////////////////////////
+
+
+
+
+
