@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="admin">
+        <input type="text" name="login" placeholder="Login" id="login"><br><br>
+        
+        <input type="email" name="email" placeholder="your e-mail" id="email"><br><br>
+        
+        <input type="password" name="password" placeholder="Password" id="password"><br><br>
+        
+        <input type="radio" name="state" id="male" value="male">
+        <label for="male">Male</label><br><br>
+
+        <input type="radio" name="state" id="female" value="female">
+        <label for="female">Fenale</label><br><br>
+
+        <button onclick="valid(document.getElementById('admin'));" type="button">SHOW PROFILE</button><br><br>
+        
+        <button onclick="constructor(document.getElementById('forms'));" type="button">SIGN IN</button>
+    </form>
+
+    <script>
+        class User {
+
+            constructor(){
+                this.login = login;
+                this.year = year;
+                this.email = email;
+                this.avatar = avatar;
+                this.passwod = passwod;
+                this.rating = rating;
+            }
+
+            render(admin) {
+                    var fail = false;
+                    var login = forms.login.value;
+                    var email = forms.email.value;
+                    
+                    var password = forms.password.value;
+                    var state = forms.state.value;
+                    
+                   //  var adr_pattern = /[0-9a-z_-]/+@[0-9a-z_-]+\.[a-z]{2,5}/i;
+
+                    if ( this.login == "" || this.login == " " )
+                        fail = "Na ati mentionat login !";
+
+                    // else if( email.length >= 6 && email.includes( '@' ) && email.includes( '.' ))
+                    //    fail = "Na ati mentionat login !!";                    
+                    // { alert( 'true' );  } else{ alert( 'false' );   }
+                       
+                    else if ( this.email.split('@').length - 1 == 0 )  //   controleaza daca email este corect
+                        fail = "Na ati mentionat login !";
+                     else if ( this.email == "" || email == " " )     //  adr_pattern.test(email) == false   
+                        fail = "Nu ati indicat e-mail !";
+                    else if ( this.password == "" || this.password == " " )
+                        fail = "Nu ati indicat password !";
+                    else if ( state == "" )
+                        fail = " indicat genul !";
+                    if  ( fail )
+                        alert( fail );
+                    else
+                        window.location = "https://www.google.com/"
+
+                      //  document.write('<h1>' + "Your login : " + this.login + '<br>' + "E-mail : " + this.email + '<br>' + "Avatar : " + this.avatar + '<br>' + "Password : " + this.passwod + '<br>' + "Rating : " + this.rating + " *** " + '<br>' + '</h1>');
+               
+                }
+            }
+
+            authorize( this.login, this.password ){           
+               if( login == this.login && password == this.password ){
+                  alert("welcome");
+               }else{
+                   alert("denied");
+                }
+             }
+//
+   //     }
+
+            var admin = new User( "Vasilica_86", 1986, "e_vas@gmail.com", '<img src="https://picsum.photos/100/100?image=011">', 123455, 10 );
+
+         //   User.render() = new User(.......);
+
+            User.authorize("admin","123455"); 
+
+            alert();
+
+
+    
+    </script> 
+
+    <script>
+
+            function valid( forms ) {
+                var fail = false;
+                var login = forms.login.value;
+                var email = forms.email.value;
+                var password = forms.password.value;
+                var state = forms.state.value;
+                 
+                if( login == "" || login == " " )
+                  fail = "Nu este corect  !";
+                else if( email == "" || email == " " )
+                  fail = "Nu ati indicat corect e-mail";
+                else if( password == "" || password == " " )
+                  fail = "Nu ati indicat corect password";
+                else if( state == "" )
+                  fail = " indicat  genul";
+                if( fail )
+                  alert( fail );
+                  else
+                  window.location = "https://www.google.com/"
+                
+            }
+            
+            </script>
+
+
+</body>
+</html>
