@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="plane.css">
+
+</head>
+<body>
+
+
+
+    <script src="plane.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
+///////////////plane.js///////
+
+// clasa care determina cum se vor comporta componentele ca avion
+
+class PlaneIcon{
+    constructor( size, direction ){
+        this.size = size;
+
+        this.direction = direction;
+        this.y = parseInt( Math.random()*500 )+"px";
+        this.x =  parseInt( Math.random()*500 )+"px";;
+    }
+
+    render(){
+        if(this.direction=="right"){
+        document.write('<img style="top:' + this.y + '; left:' + this.x + ';" src="plane-' + this.size + '.png" />');
+}
+        if(this.direction=="left"){
+        document.write('<img style="top:' + this.y + '; left:' + this.x + ';" class="reflected" src="plane-' + this.size + '.png" />');
+}
+    }
+}
+
+// cream obiecte de tip " Pane Icon"
+
+//var p1 = new PlaneIcon("big", "left");
+//p1.render();
+//console.log( p1 );
+///////////////main.js/////////////
+for(var n =1; n<=30; n++){
+    if(n%3==0){
+        var p = new PlaneIcon("small", "left");
+    }else if(n%3==1){
+        var p = new PlaneIcon("medium", "right");
+    
+    }else if(n%3==2){
+        var p = new PlaneIcon("big", "right");
+    }
+    //var p = new PlaneIcon("big", "right");
+    p.render();
+}
+///////////////////css///////////
+.reflected{
+    transform:  rotate(180deg);
+}
+img{
+    position: absolute;
+}
+
