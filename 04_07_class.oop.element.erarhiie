@@ -1,0 +1,78 @@
+<script>
+
+     // static  <>  dinamic
+    // inheritance
+    // polymorphism
+    // Array, string, date
+
+    // clase pentru a creea si utiliza valori
+    //string  -  Text
+   // array   - [1,2,3] cutie cu elimente ordonate
+   // number  - 1000
+   // boolean  true
+
+    //NaN, undefined, null
+
+    // Canvas, SVGElement, CSSRule.......
+
+    //clase ->  Obiecte (dinamic)
+
+    //clase ->  metode/proprietati (static)  -exista deja
+
+ 
+
+ class Car{
+     beep(){
+        alert("Beep!");
+     }
+ }
+
+ class BMWCar extends Car {
+
+ }
+
+ var c = new BMWCar();
+ c.beep();
+ 
+ </script>
+ 
+ //////////////////
+ 
+ <script>
+// array
+    var price = [100, 200, 300, 400, 500];
+                // 0,  1,  2 ,  3,   4,  -index
+for(var i=4; i>=0; i--){
+document.write( price[i] + '<br>');
+
+}
+
+
+//price[2] += 20;
+ //               alert( price[2] );
+
+
+ 
+ </script>
+ 
+ //////////
+ 
+ <script>
+// array
+    var price = [150, 350, 280, 300, 450];
+                // 0,  1,  2 ,  3,   4,  -index
+for(var i=4; i>=0; i--){
+    
+    if( price[i] >=200 && price[i] <=400){
+document.write( price[i] + '<br>');
+}
+}
+
+
+//price[2] += 20;
+ //               alert( price[2] );
+
+
+ 
+ </script>
+ 
