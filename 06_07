@@ -1,0 +1,119 @@
+http://www.iconarchive.com/search?q=earth
+
+///////////////
+
+// legend
+// 0 - land
+// 1 - grapes
+// 2 - garlic
+// 3 - lime
+
+var farm = [3,1,2,3,1,2,0,1,3,2];
+var div_farm = document.getElementById('farm');
+var prices = {
+    grapes: 100,
+    garlic: 200,
+    lime: 300
+}
+var money = 0;
+
+function plant(){
+    // prompt
+    var pozitia = prompt("Care parcela doriti sa saditi ?");
+
+    //if( farm[pozitia] >= 0 && farm[pozitia] <= 9) {
+        if( farm[pozitia] == 0) {
+        var seading = prompt("Care legume sau fructe doriti ?");
+        if( seading >= 1 && seading <= 3){
+            alert("good");
+            farm[pozitia ]= seading;  //  panteaza cu pozite
+        }else{
+            alert("It is not posible");
+        }
+       
+        //alert("good");
+    }
+    else  { 
+             alert("parcela ocupata");  
+             }
+
+   // farm[0] = 1;
+    showoMap();
+}
+//  Home Work
+function total(){
+    for()
+    if(farm[i] == 10 money += prices.grapes;)
+
+}
+
+
+function showoMap(){
+    div_farm.innerHTML = ''; //  pentru a elimina procesul si nu a adauga cind se butoneaza
+    for(var i = 0; i < 10; i++){
+        if(farm[i] == 0){
+            div_farm.innerHTML += '<div class="box"></div>'; // += se adauga 
+
+        }else if(farm[i] == 1){
+            div_farm.innerHTML += '<div class="box grapes"></div>';
+        
+        }else if(farm[i] == 2){
+            div_farm.innerHTML += '<div class="box garlic"></div>';
+        
+        }else if(farm[i] == 3){
+            div_farm.innerHTML += '<div class="box lime"></div>';
+        }
+
+    }
+}
+showoMap();
+
+////////////////////
+
+#farm{
+    height: 50px;
+    border-bottom: 5px solid brown;
+}
+.box{
+    width: 48px;
+    height: 48px;
+    border: 1px solid #333;
+    float: left;
+}
+.grapes{
+    background-image: url(images/grapes.png);
+}
+.garlic{
+    background-image: url(images/garlic.png);
+
+}
+.lime{
+    background-image: url(images/lime.png);
+}
+
+//////////////////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="farm.css">
+
+</head>
+<body>
+
+    <div id="farm">
+       <!--innerHTML-->
+    </div>
+
+    <button onclick="plant();">Plant</button>
+    <button onclick="total();">Total</button>
+    
+
+
+    <script src="farm.js"></script>
+</body>
+</html>
