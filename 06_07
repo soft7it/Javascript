@@ -46,7 +46,14 @@ function total(){
     if(farm[i] == 10 money += prices.grapes;)
 
 }
-
+function total(){
+for(var i=0; i<=9; i++){
+    
+    if( price[1] + price[2] + price[3]){
+document.write( price[i] );
+}
+}
+}
 
 function showoMap(){
     div_farm.innerHTML = ''; //  pentru a elimina procesul si nu a adauga cind se butoneaza
