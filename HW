@@ -1,0 +1,10 @@
+//  Home Work
+
+function total() {
+       
+    for (var i = 0; i < prices.length; i++) {
+        alert( money = prices[0] + prices[1] + prices[2]);
+        //document.innerHTML += '<input type="text" name="" placeholder="phone ' + i + '">'//  i adauga cifra in input
+    }
+    showoMap();
+}
