@@ -8,3 +8,16 @@ function total() {
     }
     showoMap();
 }
+
+function total() {
+    
+    for (var i = 0; i < farm.length; i++) {
+        
+     //   if (farm[pozitia] == 0 && seading >= 1 && seading <= 3)   {   }     
+              
+             alert( money = farm.prices[0] + farm.prices[1] + farm.prices[2] );
+               
+            }
+        total();    
+        }
+
