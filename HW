@@ -21,3 +21,6 @@ function total() {
         total();    
         }
 
+ 
+// "morcov, 50 lei".split(",")
+//var separat = "morcov,50lei".split(",")
