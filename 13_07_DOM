@@ -1,0 +1,169 @@
+document.getElementById('container').innerHTML = '<div class="row">Content Text</div>'; // Parsing; lucreaza asa greu
+
+
+// legat de  elemente
+
+document.createElement('tag')  -> object
+parent.appendChild (element)  -- adaugarea elementului
+parent.insertBefore (element, referenceElement);   -  
+parent.removeCild(element);     -stergerea elementului
+parent.replaceChild(element, oldElement)
+  
+  // atribute
+
+
+// standart, src, .style, .width, .href, .id
+//.className - > class=""
+
+element.setAttribute('name','value')
+element.getAttribute('name')
+element.removeAttribute('name')
+
+////////////////////////////////
+
+function createTank(){  // creaza un dic cu clasa tanc sil plaseaza in interior div road!!
+    
+    var tank = document.createElement('div');   //  <div></div>
+        tank.className = 'tank';               //  <div class="tank"></div>
+    
+    var road = document.getElementById('road');
+        road.appendChild( tank );
+        return tank;
+
+}
+var tank = createTank();
+var left = 0;
+
+function createTree(){
+    var tree = document.createElement('div');
+        tree.className = 'tree';
+
+    var road = document.getElementById('road');
+        road.appendChild( tree );
+        return tree;
+
+}
+
+createTree();
+
+function moveTank(){ // event < capturam
+   console.log( event.keyCode );
+   if( event.keyCode == 37 ) {
+       //alert("move left");
+       left--;
+       tank.style.left = left + 'px';
+       tank.className = 'tank left';
+   } // left
+   if( event.keyCode == 39 ) {
+       //alert("move right");
+       left++;
+       tank.style.left = left + 'px';
+       tank.className = 'tank right';
+   } // right
+}
+
+//  for()  -->  CtreateTree()
+// position, .left<< Math.random()
+
+
+
+//tank.onclick = function() {
+ //   var start = Date.now(); // сохранить время начала
+
+  //  var timer = setInterval(function() {
+      // вычислить сколько времени прошло из opts.duration
+   //   var timePassed = Date.now() - start;
+
+  //    tank.style.left = timePassed / 5 + 'px';
+
+   //   if (timePassed > 2000) clearInterval(timer);
+
+  //  }, 20);
+ 37// }
+ 
+ //////////////////////////
+ #road{
+    height: 24px;
+    border: 1px solid #DDD;
+    position: relative;
+}
+.tank{
+    width: 24px;
+    height: 24px;
+    background-image: url(tank.png);
+    background-repeat: no-repeat;
+    /*background-color: #777;*/
+    background-position: center bottom;
+    position: absolute;
+}
+.tree{
+    width: 24px;
+    height: 24px;
+    background-image: url(tree.png);
+    background-repeat: no-repeat;
+    background-color: #777;
+    background-position: center bottom;
+    position: absolute;
+}
+.tank.right{
+    transform: scaleX(-1);
+}
+////////////////////////////////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tank Game</title>
+    <link rel="stylesheet" href="tank.css">
+</head>
+<body onkeydown="moveTank();">
+
+    <div id="road">
+
+      <!--  <div class="tank"></div>  -->
+
+    </div>
+
+
+    <script src="tank.js"></script>    
+
+</body>
+</html>
+
+/////////////////////////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modern Input  UI</title>
+</head>
+<body>
+    <input onkeyup="update();" type="text" name="" id="phone" placeholder="enter phon">
+
+    <script>
+            var mask = "xxxx-xx-xx";  // format nr de tel.
+            var text = '';
+            function update(){
+                var input = document.getElementById('phone');
+                
+                var d = event.code.replace('Digit','').replace('Numpad','');
+                mask = mask.replace('x',d);
+                input.value = mask;
+                
+                //alert();
+            }
+    </script>
+</body>
+</html>
+
+ 
+
+
+
+
