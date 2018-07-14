@@ -162,7 +162,33 @@ function moveTank(){ // event < capturam
 </body>
 </html>
 
- 
+ var i = 0;
+
+for (; i < 9000; i += 3) {
+   createTree();
+    
+    
+    //alert(i);
+    // ещё выражения
+}
+
+
+
+
+
+
+
+
+
+
+//var n = 0;
+//var x = 0;
+
+//while (n < 3000) {
+ //   n += 3;
+ //   x += n;
+//    createTree();
+   // alert(n);}
 
 
 
