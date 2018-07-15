@@ -190,6 +190,23 @@ for (; i < 9000; i += 3) {
 //    createTree();
    // alert(n);}
 
+///////////////////////////////////////
 
+<html>  
+<body>  
+<h3>Scriptul afiseaza in mod aleator unul din doua link-uri, folosind if..else</h3> <hr/>  
+<script>  
+var r=Math.random();  
+if (r>0.5)  
+{  
+document.write("<a href='http://www.google.com'>Google!</a>");  
+}  
+else  
+{  
+document.write("<a href='http://www.yahoo.com'>Yahoo!</a>");  
+}  
+</script>  
+</body>  
+</html>
 
 
