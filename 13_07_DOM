@@ -214,4 +214,21 @@ document.write("<a href='http://www.yahoo.com'>Yahoo!</a>");
 
 https://web.ceiti.md/lesson.php?id=16
 
+function muta(){
+   for ( var i = 0; i < 9000; i += 3 ) {
 
+        if ( event.keyCode > 3 ){
+            tree.push(createTree());
+            document.getElementById("tree").innerHTML = tree;
+           // createTree();
+           // return tree;
+           // document.write(tree + i); 
+            //document.getElementById("road").innerHTML = tank; 
+           // document.write(createTree());  
+        } 
+    
+    //alert(i);
+    // ещё выражения
+   // 
+}
+}
