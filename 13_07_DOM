@@ -232,3 +232,13 @@ function muta(){
    // 
 }
 }
+////////////////
+
+function whereIsTheTank(){
+    if( left > window.innerWidth/2 ){
+    alert('right side')
+    }else {
+    alert('left side')
+    }
+}
+whereIsTheTank();
