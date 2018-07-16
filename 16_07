@@ -1,0 +1,172 @@
+https://www.google.com/search?q=animated+water+wave+gif+texture&tbm=isch&source=lnt&tbs=isz:i&sa=X&ved=0ahUKEwiL6YHU3qPcAhVKh6YKHZXlAswQpwUIHA&biw=1600&bih=756&dpr=1#imgdii=DWFMCwY1hWnDNM:&imgrc=EPe9qYt-jP2r3M:
+////////////////////////////
+
+http://www.iconarchive.com/search?q=ship&page=4
+
+/////////////////////////////////////
+
+https://www.google.com/search?biw=790&bih=736&tbs=isz%3Ai&tbm=isch&sa=1&ei=Zp9MW9noDMuLmgWm8JrwAQ&q=explosion+sprite&oq=explosion+sprite&gs_l=img.3..0i19k1l7j0i30i19k1l3.102791.110533.0.111676.16.10.0.6.6.0.120.1072.0j10.10.0....0...1c.1.64.img..0.16.1102....0.gaHstabh590#imgrc=Cgedg7BPFPQyPM:
+
+
+////////////////////////////////////////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2D game   </title>
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/boat.css">
+</head>
+<body onkeydown="action()">
+
+    <div class="container">
+        <div id="map">
+           <!-- <div class="boat"></div>   render !! js-->  
+
+        </div>
+
+        <div id="panel">
+
+        </div>
+
+
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/boat.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
+
+///////////////////////////
+//  fisierul principal
+
+//test
+
+var b = new Boat();
+b.render();
+console.log( b );
+
+
+// navigarea
+
+function action(){
+   if( event.keyCode == 37 ){ // left
+        b.moveLeft(); 
+   }
+   if( event.keyCode == 38 ){ // top
+        b.moveTop(); 
+   }
+   if( event.keyCode == 39 ){ //right
+        b.moveRight(); 
+   }
+   if( event.keyCode == 40 ){ //down
+        b.moveDown(); 
+   }
+}
+
+////////////////////////////////
+// se va afla logica deplasarii si interactiunea corabiei
+
+// declaram clasa"Boat"  - vom cereaa m. multe obiecte  ca corabie.
+
+class Boat{  //  indicam proprietati de tip boat
+    constructor(){
+        this.left = randomCoord();  //parseInt( (640 - 128) * Math.random( ));  //px
+        this.top = randomCoord();   //parseInt( (640 - 128) * Math.random( ));  //px
+        this.dir = 'n';
+
+    }
+    // metode si functi p/u toate corabii
+    render(){
+        var map = document.getElementById('map');
+        this.div = document.createElement('div');
+        this.div.className = 'boat ' + this.dir;  // nu uita spatiu la boat !!!!!!!!!
+        this.div.style.left = this.left + "px";
+        this.div.style.top = this.top + "px";
+            map.appendChild(this.div);
+    }
+
+
+
+    moveLeft(){
+        this.dir = 'w';
+        this.div.className = 'boat ' + this.dir;
+
+    }
+    moveTop(){
+        this.dir = 'n';
+        this.div.className = 'boat ' + this.dir;
+    }
+    moveRight(){
+        this.dir = 'e';
+        this.div.className = 'boat ' + this.dir;
+    }
+    moveDown(){
+        this.dir = 's';
+        this.div.className = 'boat ' + this.dir;
+    }
+}
+//var b = new Boat();  --le punem in game.js
+//b.render();--le punem in game.js
+//console.log( b );--le punem in game.js
+
+/////////////////////////
+
+//  functii ajutatoare
+//  genereaza o corordonata pentru harta
+
+function randomCoord(){
+   return parseInt( (640 - 128) * Math.random( ));
+
+}
+
+////////////////////////
+/*boat.css*/
+.boat{
+    width: 126px;
+    height: 126px;
+    border: 1px solid #444;
+    background-image: url(../icons/ship.png);
+    /*border-radius: 100%;*/
+    position: absolute;
+    transition: 0.3s;
+
+}
+.boat.w{
+   
+
+}
+.boat.n{
+    transform: rotate(90deg);
+
+}
+.boat.e{
+    transform: rotate(180deg);
+
+}
+.boat.s{
+    transform: rotate(270deg);
+
+}
+
+/////////////////
+
+/*map.css*/
+body{
+    background-color: #333;
+
+}
+#map{
+    width: 640px;
+    height: 640px;
+    border: 6px solid #222;
+    background-image: url(../icons/water.gif);
+    background-blend-mode: multiply;
+    background-color: #080808;
+    position: relative;
+}
+//////////////////////////
+
