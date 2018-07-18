@@ -1,0 +1,184 @@
+class Mines{  //  indicam proprietati de tip mines
+    constructor(){
+    this.left = randomCoordMines();  //parseInt( (640 - 32) * Math.random( ));  //px
+    this.top = randomCoordMines();   //parseInt( (640 - 32) * Math.random( ));  //px
+    this.dir = 'n'; // atinge rindu--16
+   
+       }
+    // metode si functi p/u toate min
+    render(){
+    var map = document.getElementById('map');
+    this.div = document.createElement('div');
+    this.div.className = 'mines ' + this.dir;  // nu uita spatiu la boat !!!!!!!!!
+    this.div.style.left = this.left + "px";
+    this.div.style.top = this.top + "px";
+    map.appendChild(this.div);
+       }
+
+    explode(){  // creem animatie
+        this.div.style.backgroundImage = 'url(icons/explosion.png)';
+        this.div.style.backgroundSize = '128px';
+        var div = this.div;
+        var y = 32;
+        setInterval(function(){
+            div.style.backgroundPosition = '0px -'+y+'px';
+            div.style.transform = 'translateX( ' + parseInt(Math.random() * 10) + 'px)' + 
+            ' translateY( ' + parseInt(Math.random() * 10) + 'px)';;
+            y +=32;
+            if(y > 400){
+                div.parentElement.removeChild(div);
+            }
+        },200);
+        //alert('x');
+    }
+    
+   } 
+
+   // explozie actiune animatia
+
+/////////////////////////////////////////////
+
+// se va afla logica deplasarii si interactiunea corabiei
+
+// declaram clasa"Boat"  - vom cereaa m. multe obiecte  ca corabie.
+
+class Boat{  //  indicam proprietati de tip boat
+    constructor(){
+        this.left = randomCoord();  //parseInt( (640 - 128) * Math.random( ));  //px
+        this.top = randomCoord();   //parseInt( (640 - 128) * Math.random( ));  //px
+        this.dir = 'n';
+        this.health = 100;  // hp
+        this.barells = [];
+
+    }
+    // metode si functi p/u toate corabii
+    render(){
+        var map = document.getElementById('map');
+        this.div = document.createElement('div');
+        this.div.className = 'boat ' + this.dir;  // nu uita spatiu la boat !!!!!!!!!
+        this.div.style.left = this.left + "px";
+        this.div.style.top = this.top + "px";
+            map.appendChild(this.div);
+    }
+
+
+
+    moveLeft(){
+        this.dir = 'w';
+        this.div.className = 'boat ' + this.dir;
+        if(this.left > 10){
+        this.left -= 10;                         //  schimba directia
+        this.div.style.left = this.left + "px";
+        }
+    }
+    moveTop(){
+        this.dir = 'n';
+        this.div.className = 'boat ' + this.dir;
+        if(this.top > 10){
+        this.top -= 10;                         //  schimba directia
+        this.div.style.top = this.top + "px";
+        }
+    }
+    moveRight(){
+        this.dir = 'e';
+        this.div.className = 'boat ' + this.dir;
+        if(this.left < 502){   //   640px teren - 128px corabia - 10px start
+        this.left += 10;                         //  schimba directia
+        this.div.style.left = this.left + "px";
+        }
+    }
+    moveDown(){
+        this.dir = 's';
+        this.div.className = 'boat ' + this.dir;
+        if(this.top < 502){
+        this.top += 10;                         //  schimba directia
+        this.div.style.top = this.top + "px";
+        }
+    }
+        //  functie ajutatoare calculeaza distanta  de la aceasta corabie pina la obiect
+    distance(object){
+        var a = this.left + 64 - (object.left +16);
+        var b = this.top + 64 - (object.top +16);
+        var d = Math.sqrt(a*a + b*b);
+        return d;
+    }    
+
+   
+}
+//var b = new Boat();  --le punem in game.js
+//b.render();--le punem in game.js
+//console.log( b );--le punem in game.js
+
+/////////////////////////////////   boat
+
+//  fisierul principal
+
+//test
+
+var b = new Boat();
+b.render();
+console.log( b );
+
+// test barel
+
+var ba = new Barrel();
+ba.render();
+console.log( ba );
+
+// test mines
+
+var mi = new Mines();
+mi.render();
+console.log( mi );
+
+
+// navigarea
+
+function action(){
+   if( event.keyCode == 37 ){ // left
+        b.moveLeft(); 
+   }
+   if( event.keyCode == 38 ){ // top
+        b.moveTop(); 
+   }
+   if( event.keyCode == 39 ){ //right
+        b.moveRight(); 
+   }
+   if( event.keyCode == 40 ){ //down
+        b.moveDown(); 
+   }
+   if(b.distance(mi) < 70){  // interactiona la mine
+    b.health -= 20;   
+    mi.explode();     // la mines am atasato animatie fisier mines.js
+    //alert('boom!!!');
+   }
+   if(b.distance(ba) < 30){   // interactiona la barrel
+    alert('YEEEEE!!!');
+}
+   console.log(b.distance(mi));
+
+}
+
+//  abdate panel logic
+
+var panel = document.getElementById('panel');
+
+function updatePanel(){
+    panel.innerHTML = '';
+    var h1 = document.createElement('h1');
+        h1.innerText = 'Boat';
+        panel.appendChild( h1 );
+
+    
+    var h3 = document.createElement('h3');
+        h3.innerText = 'Healf' + "  " + b.health;
+        panel.appendChild( h3 );
+
+    var h3 = document.createElement('h3');
+        h3.innerText = 'Room' + "  " + b.barells.length;
+        panel.appendChild( h3 );
+
+
+}
+setInterval( updatePanel, 500 ); //500secunde
+//////////////////////////game
