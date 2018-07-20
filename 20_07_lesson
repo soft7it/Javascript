@@ -1,0 +1,86 @@
+Data: 
+
+- stocate
+- prelucreaza
+- schimb
+
+temporar
+1) var <-- (F5,reload, close)
+2) DOM (atributes)  - date traeste pina la primul refresh
+
+persistent - m. indelungat traeste date
+3) (web Storage) - > (numai p/u browser) ->  cookie(2-4kb) inregistrezi date din partea user si server!!!
+
+document.cookie
+
+www.javascriptdocumentcookie
+
+w3school
+ - local Storage  - depozit privat serveru nu poate vedea, volumul de date e mult mai mare 
+ - Sesion Storage    - pastreaza date pina inchizi fereastra.
+ 
+ PWA - progres web aplication 
+ 
+ JS - transmitem date in Storage sintem obligati sa la transformam strig - text.
+XML - . JSON, YAML(PHP), 
+
+JSON.stringify( data ) --->  json
+JSON.parse( data )
+
+/////////////////////////////////likeStorage.html
+
+   <button onclick="like();">Like</button>
+
+
+
+    <script>
+        function like(){
+            localStorage.setItem('like', 'yes');
+            checkLike();
+        }
+        function checkLike(){
+            if(localStorage.getItem('like') == 'yes'){
+                document.body.innerHTML = '<h1> Ypu have liked this page </h1>';
+            }
+
+        }
+        checkLike();
+        </script>
+        
+        ////////////////////
+        
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>likeStorage.html</title>
+</head>
+<body>
+    <button onclick="like();">Like</button>
+
+
+
+    <script>
+        var  name = prompt('What is your name');
+        var  first = prompt('What is your firstName');
+
+        function Name(){
+            localStorage.setItem('name', name);
+           // checkname();
+        }
+         Name();
+
+         function firstName(){
+            localStorage.setItem('fname', first);
+           // checkname();
+        }
+         firstName();
+
+        // checkLike();
+        </script>
+</body>
+</html>///////////////////
+////////////////////////////////////////
+
