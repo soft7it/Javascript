@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    
+  </head>
+  <body>
+
+    <button onclick="load();">Incarca</button>
+    <div id="content">..................</div>
+
+
+
+
+    <script src="index.js"></script>
+  </body>
+</html>
+
+//////////////////////////// date.txt
+
+Fisiererul textual simplu
+Curieru nostru a facut treaba
+
+/////////////
+
+function load(){
+  // pregatim functionalul pentru conexiune
+  var connection = new XMLHttpRequest();
+
+  // pregatim cererea
+  connection.open("GET","date.txt");
+  // executa GO
+  connection.send();
+
+  // asteptam evenimentul transmisiei incheiata
+
+  connection.onload = function(){
+
+  //alert( connection.responseText )};
+  // cauta divui id
+  //  incarca textul in el
+  document.getElementById('content').innerHTML = connection.responseText;}
+ 
+}
+
+  //apare reclama fara voie
+ setTimeout( load, 3000 );
+}
+
+/////////////////////////////
+function load(){
+  var con = new XMLHttpRequest();
+//////////////////////////
+  con.open("GET","https://data.fixer.io/api/latest");
+  //////////////////////
+  con.send();
+
+}
+
+setTimeout( load, 1000 );
+
+/////////// api
+
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+   
+  </head>
+  <body>
+      <label>
+        <h3>19.00MDL</h3>
+        <input type="text" placeholder="0.00" /> EUR>
+        <input type="text" placeholder="0.00" /> MDL>
+      </label>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+
+
