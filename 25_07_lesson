@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+   
+  </head>
+  <body>
+      <label>
+        <h3 id="cur">19.00MDL</h3>
+        <input type="text" onkeyup="convert();" placeholder="0.00" /> EUR>
+        <input type="text" placeholder="0.00" /> MDL>
+      </label>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+
+///////////////////////////////
+
+const KEY = '7e38c3dea419007b7a514f269ba65027';
+var euro_to_mdl = +localStorage.getItem('euro_to_mdl_' + day); //  fiecare zi separat
+var day = new Date().getDate();
+
+function load(){
+    var con = new XMLHttpRequest();
+  //////////////////////////
+    con.open("GET","http://data.fixer.io/api/latest?access_key=" + KEY);
+    //////////////////////
+    //  CROS -> Cros origin Request Securyty
+    //  (https)repl.it  --> )\(http)fixer.io  , are loc schimb de actiuni intre http cu https
+  
+    con.send(); 
+
+    con.onload = function(){
+      var data = JSON.parse(con.responseText);
+      //console.log(data.rates.MDL);
+      euro_to_mdl = data.rates.MDL;  // rates luam din netwok
+      localStorage.setItem('euro_to_mdl_' + day, euro_to_mdl)  // memoram in local Storage date
+      localStorage.setItem('data_' + day, con.responseText);  // memoram in local Storage toate date
+      //document.getElementById('cur').innerHTML = euro_to_mdl ;  // alt model !!
+      document.body.firstElementChild.firstElementChild.innerHTML = Math.round( euro_to_mdl * 100 ) / 100 ;
+      //Math.round(euro_to_mdl * 100) / 100  - rotungeste !!  
+      // var data = JSON.parse( localStorage.getItem('data_25'));
+      // data.rates.RUB
+      // data.rates.USD
+     
+    }  
+  }  
+  if(euro_to_mdl == 0 ){
+  setTimeout( load, 1000 );  //https://data.fixer.io/api/latest
+}
+
+  function convert(){
+    var input_1 = document.getElementsByTagName('input')[0];
+    console.log( input_1.value );
+    var input_2 = document.getElementsByTagName('input')[1];
+    //console.log( input_2.value = input_1.value * euro_to_mdl );
+    input_2.value = Math.round( input_1.value * euro_to_mdl * 100 ) / 100;
+  
+  }
+  /////////////////////////  convertor
+  
+  
