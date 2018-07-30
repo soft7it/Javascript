@@ -1,0 +1,72 @@
+https://developers.google.com/maps/documentation/distance-matrix/start
+/////////////
+https://console.cloud.google.com/google/maps-apis/apis/maps-backend.googleapis.com/metrics?project=my-project-calculator-api&folder&organizationId&duration=PT1H
+
+
+
+/////////////////////////////// calculator.js
+
+const KEY = 'AIzaSyCS66M-gBF5PTNTsGIIoBY2rMMzDKYvDUk';
+
+const URL = 'https://maps.googleapis.com/maps/api/distancematrix/json';
+
+//var adress_from = 'London';
+//var adress_to = 'Chisinau';
+
+function calculate(){
+    var adress_from = document.getElementById('from').value
+    var adress_to = document.getElementById('to').value
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", 
+        URL + '?origins=' + adress_from
+        + '&destinations=' + adress_to
+        + '&key=' + KEY);
+        xhr.onload = function(){
+            var data = JSON.parse(xhr.responseText);
+            // console.log(data);
+            // alert(data.rows[0].elements[0].status);
+            if(data.rows[0].elements[0].status == "OK"){
+            console.log(data.rows[0].elements[0].distance.text);
+            document.getElementById('result').innerHTML = data.rows[0].elements[0].distance.text + '<br>' + data.rows[0].elements[0].duration.text;
+                //  pastram in local Storage
+                var result = {
+                    from: adress_from,
+                    to: adress_to,
+                    distance: data.rows[0].elements[0].distance.text,
+                    time: data.rows[0].elements[0].duration.text,
+                };
+                localStorage.setItem('dist_' + new Date().getTime(), JSON.stringify(result) );
+        }else if(data.rows[0].elements[0].status == "NOT_FOUND"){
+            alert('EROARE ORAS');
+        }
+    } 
+    xhr.send();
+
+}
+//calculate();
+
+//////////////////////////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google calculator API</title>
+</head>
+<body>
+    <input id="from" type="text" placeholder="enter origin address">
+    <br>
+    <input id="to" type="text" placeholder="enter destinations address">
+    <br>
+    <button onclick="calculate();">Calculate</button>
+    <div id="result"></div>
+    
+
+    <script src="calculator.js"></script>
+</body>
+</html>
+
+///////////////////
