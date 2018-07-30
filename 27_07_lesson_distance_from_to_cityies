@@ -69,4 +69,13 @@ function calculate(){
 </body>
 </html>
 
-///////////////////
+///////////////////google distance api
+
+https://console.developers.google.com/apis/library?project=my-project-calculator-api&q=di
+
+////////////
+https://developers.google.com/maps/documentation/distance-matrix/intro
+//////////////chrome allow control allow origin
+/////////////// - https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
+
+
