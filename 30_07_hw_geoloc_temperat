@@ -1,0 +1,63 @@
+const KEY = 'a9e1b02d745043075b9f446a93c06c73';
+const URL = 'https://samples.openweathermap.org/data/3.0/stations/816a?appid=b1b15e88fa797225412429c1c50c122a1';
+
+function geoFindMe() {
+    var output = document.getElementById("out");
+  
+    if (!navigator.geolocation){
+      output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+      return;
+    }
+  
+    function success(position) {
+      var latitude  = position.coords.latitude;
+      var longitude = position.coords.longitude;
+  
+      output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+  
+      var img = new Image();
+      img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+  
+      output.appendChild(img);
+    };
+  
+    function error() {
+      output.innerHTML = "Unable to retrieve your location";
+    };
+  
+    output.innerHTML = "<p>Locating…</p>";
+  
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+
+//   ${
+//     "id": "583436dd9643a9000196b8d6",
+//     "created_at": "2016-11-22T12:15:25.967Z",
+//     "updated_at": "2016-11-22T12:15:25.967Z",
+//     "external_id": "SF_TEST001",
+//     "name": "San Francisco Test Station",
+//     "longitude": -122.43,
+//     "latitude": 37.76,
+//     "altitude": 150,
+//     "rank": 0
+// }
+
+////////////////////////////////////////
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Geo Location</title>
+</head>
+<body>
+    <p><button onclick="geoFindMe()">Show my location</button></p>
+    <div id="out"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.map"></script>
+    
+    <script src="geolocation.js"></script>
+</body>
+</html>
