@@ -1,63 +1,146 @@
-const KEY = 'a9e1b02d745043075b9f446a93c06c73';
-const URL = 'https://samples.openweathermap.org/data/3.0/stations/816a?appid=b1b15e88fa797225412429c1c50c122a1';
+const KEY = '108bdee70d77e7598abeb12471afc076';
 
-function geoFindMe() {
-    var output = document.getElementById("out");
-  
-    if (!navigator.geolocation){
-      output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-      return;
+const URL = 'https://samples.openweathermap.org/data/2.5/weather';
+
+const URL_ip = 'https://json.geoiplookup.io/8.8.8.8';
+
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
     }
-  
-    function success(position) {
-      var latitude  = position.coords.latitude;
-      var longitude = position.coords.longitude;
-  
-      output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-  
-      var img = new Image();
-      img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-  
-      output.appendChild(img);
-    };
-  
-    function error() {
-      output.innerHTML = "Unable to retrieve your location";
-    };
-  
-    output.innerHTML = "<p>Locating…</p>";
-  
-    navigator.geolocation.getCurrentPosition(success, error);
-  }
+}
 
-//   ${
-//     "id": "583436dd9643a9000196b8d6",
-//     "created_at": "2016-11-22T12:15:25.967Z",
-//     "updated_at": "2016-11-22T12:15:25.967Z",
-//     "external_id": "SF_TEST001",
-//     "name": "San Francisco Test Station",
-//     "longitude": -122.43,
-//     "latitude": 37.76,
-//     "altitude": 150,
-//     "rank": 0
+function showPosition(position) {
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+        + latlon + "&zoom=17&size=300x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+    document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
+}
+//To use this code on your website, get a free API key from Google.
+//Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+
+function showError(error) {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+
+// function geoFindMe() {
+//     var output = document.getElementById("out");
+
+//     if (!navigator.geolocation) {
+//         output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+//         return;
+//     }
+
+//     function success(position) {
+//         var latitude = position.coords.latitude;
+//         var longitude = position.coords.longitude;
+
+//         output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+//         var img = new Image();
+//         img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+//         output.appendChild(img);
+//     };
+
+//     function error() {
+//         output.innerHTML = "Unable to retrieve your location";
+//     };
+
+//     output.innerHTML = "<p>Locating…</p>";
+
+//     navigator.geolocation.getCurrentPosition(success, error);
 // }
 
+///////////////
+function setup(){
+    createCanvas(400,200);
+    loadJSON('https://samples.openweathermap.org/data/2.5/find?q=London&units=metric&appid=b6907d289e10d714a6e88b30761fae22', gotData);
+
+}
+
+var data
+
+function gotData(data){
+   // println(data);
+   weather = data;
+   if(weather){
+       elipse(100, 100, weather.main.temp, weather.main.temp);
+       elipse(300, 100, weather.main.humidity, weather.main.humidity);
+   }
+}
+
+function draw(){
+    background(0);
+}
+
+/////////////////////////////////////////////////////
+function calculate(){
+    var adress_here = document.getElementById('sit').value;
+    var adress = new XMLHttpRequest();
+    adress.open("GET", 
+                URL + '?q=' + adress_here + '&APPID=' + KEY + '&units=metric');
+    adress.onload = function () {
+        var data = JSON.parse(adress.responseText);
+        console.log(data);
+        if( data.main[0].temp == 'OK' ){
+            console.log(data.main[0].temp);
+            document.getElementById('result').innerHTML = data.main[0].temp + + '<br>' + data.main[0].humidity;
+            var result = {                
+                sit: adress_here,
+                temp: data.main[0].temp,
+                time: data.main[0].temp,
+            };
+            localStorage.setItem('temper_' + new Date().getTime(), JSON.stringify(result));
+        }
+
+}
+adress.send();
+}
+//calculate();
 ////////////////////////////////////////
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Geo Location</title>
 </head>
-<body>
-    <p><button onclick="geoFindMe()">Show my location</button></p>
-    <div id="out"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.map"></script>
+<body>
+    <p>
+        <button onclick="getLocation();">Show my location</button>
+    </p>
+    <div id="map"></div>
+    <br>
+    <input id="sit" type="text" placeholder="enter address">
+    <br>
+
+    <button onclick="calculate();">TEMPERATURA</button> 
+    <div id="reult"></div>   
     
+
     <script src="geolocation.js"></script>
 </body>
+
 </html>
