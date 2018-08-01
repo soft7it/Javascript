@@ -1,1 +1,64 @@
+///  preloader.js
 
+///////////////
+// function test(){
+//     var canvas = document.getElementById('preloader').getContext('2d');
+//     console.log(canvas);
+
+//     canvas.moveTo(250,250);
+//     canvas.lineTo(350,350);
+//     canvas.stroke();
+// }
+//////
+// test();
+
+var canvas = document.getElementById('preloader').getContext('2d');
+canvas.globalCompositeOperation = 'lighten';
+var h = 0;
+
+function start(){
+    drawImage();
+    setInterval(drawEffect,100);
+    //drawEffect();
+ 
+}
+start();
+
+function drawImage(){
+    var img = new Image();
+    img.src = 'bottle.png';
+    img.onload = function(){
+        canvas.drawImage(img,0,0);
+
+    }
+}
+
+function drawEffect(){
+    canvas.fillStyle = '#777';
+    canvas.fillRect(0,500,500, h);
+    h-=10;
+}
+
+/////html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{background-color: #333;}
+        #preloader{ border: 5px solid #555;}
+    </style>
+</head>
+<body>
+    <canvas id="preloader" width="500" height="500">
+        Your browswe sucks!  :)
+    </canvas>
+    
+
+    <script src="preloader.js"></script>
+</body>
+</html>
