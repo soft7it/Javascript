@@ -21,17 +21,20 @@ function rotate(){   //  cade svg
 
 
 
-function winkLeftEye(){
-    setInterval(function(){  //  animeaza ochiu
+function winkLeftEye() {
+    setInterval(function () {  //  animeaza ochiu
         var eye_left = document.getElementById('eye-left');
-       // console.log(eye_left.getAttribute('fill'));
-       if(eye_left.getAttribute('fill') == '#FFFFFF'){
-           eye_left.setAttribute('fill','red');
-       }else{
-           eye_left.setAttribute('fill','#FFFFFF');
-       }
-        
-        },50);
+        var eye_right = document.getElementById('eye-right');
+        // console.log(eye_left.getAttribute('fill'));
+        if (eye_left.getAttribute('fill') == '#FFFFFF' && eye_right.getAttribute('fill') == '#FFFFFF') {
+            eye_left.setAttribute('fill', 'red');
+            eye_right.setAttribute('fill', 'red');
+        } else {
+            eye_left.setAttribute('fill', '#FFFFFF');
+            eye_right.setAttribute('fill', '#FFFFFF');
+        }
+
+    }, 100);
 }
 start();
 
