@@ -69,52 +69,36 @@ function showError(error) {
 //     navigator.geolocation.getCurrentPosition(success, error);
 // }
 
-///////////////
-function setup(){
-    createCanvas(400,200);
-    loadJSON('https://samples.openweathermap.org/data/2.5/find?q=London&units=metric&appid=b6907d289e10d714a6e88b30761fae22', gotData);
-
-}
-
-var data
-
-function gotData(data){
-   // println(data);
-   weather = data;
-   if(weather){
-       elipse(100, 100, weather.main.temp, weather.main.temp);
-       elipse(300, 100, weather.main.humidity, weather.main.humidity);
-   }
-}
-
-function draw(){
-    background(0);
-}
 
 /////////////////////////////////////////////////////
-function calculate(){
+function calculate() {
     var adress_here = document.getElementById('sit').value;
     var adress = new XMLHttpRequest();
-    adress.open("GET", 
-                URL + '?q=' + adress_here + '&APPID=' + KEY + '&units=metric');
+
+    adress.open("GET",
+        URL + '?q=' + adress_here + '&APPID=' + KEY + '&units=metric');
+
     adress.onload = function () {
         var data = JSON.parse(adress.responseText);
         console.log(data);
-        if( data.main[0].temp == 'OK' ){
-            console.log(data.main[0].temp);
-            document.getElementById('result').innerHTML = data.main[0].temp + + '<br>' + data.main[0].humidity;
-            var result = {                
+        if (true || data.main.temp) {
+            console.log(data.main.temp);
+            document.getElementById('result').innerHTML = 'Temperatura acum  ' + data.main.temp + '<br>'
+                                                         + 'Umeditatea ' + data.main.humidity + '<br>'
+                                                          + 'Temperatura maxim ' + data.main.temp_max + '<br>'
+                                                           + 'Suflarea vintului ' + data.wind.speed;
+            var result = {  //pastreaza info si o da zilnic inoita
                 sit: adress_here,
-                temp: data.main[0].temp,
-                time: data.main[0].temp,
+                temp: data.main.temp,
+                humidity: data.main.humidity,
+                temp_max: data.main.temp_max,
+                wind: data.wind.speed,
             };
-            localStorage.setItem('temper_' + new Date().getTime(), JSON.stringify(result));
+            localStorage.setItem('temper_' + new Date().getTime(), JSON.stringify(result));  //pastreaza info si o da zilnic inoita
         }
-
+    }
+    adress.send();
 }
-adress.send();
-}
-//calculate();
 ////////////////////////////////////////
 
 <!DOCTYPE html>
@@ -136,11 +120,11 @@ adress.send();
     <input id="sit" type="text" placeholder="enter address">
     <br>
 
-    <button onclick="calculate();">TEMPERATURA</button> 
-    <div id="reult"></div>   
-    
+    <button onclick="calculate();">TEMPERATURA</button>
+    <div id="result"></div>
 
-    <script src="geolocation.js"></script>
+
+    <script src="calculate.js"></script>
 </body>
 
 </html>
