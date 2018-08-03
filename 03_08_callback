@@ -1,0 +1,98 @@
+// stabilim reactia functiei la clik
+
+//document.getElementById('btn').onclick = first;
+document.getElementById('btn').onclick = function(){ first(second) } ;
+
+// lant la apel 
+
+function first(callback){
+//function first(){
+    var data;  // simulam intarzierea datelor
+    setTimeout(function(){
+        data = 100;
+        callback(data);
+      //   second(data); //  se face estafeta unei altei, apel direct
+    },1500);
+    // presupunem din baza de date vine
+
+    console.log('--------------------------------');
+    console.log('Executing 1');
+   
+}
+
+function second(data){ //  se face estafeta unei altei
+    console.log('Executing 2');
+    third(data); //  se face estafeta unei altei
+}
+
+function third(data){ //  se face estafeta unei altei
+    console.log('Executing 3');
+    console.log('Dataele ' + data);
+    //first(second);   merge pe ciclu la infinit
+}
+////////////////
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Callback Example</title>
+</head>
+<body>
+
+    <button id="btn">CLICK ME</button>
+
+
+
+    <script src="cb.js"></script>
+    
+
+
+</body>
+</html>
+
+/////////////////////
+//dynamic.js
+
+var mobile = false;
+function adapt (){
+    if(window.innerWidth<800 && !mobile){
+        // creem mobile.css
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = "mobile.css";
+        document.head.appendChild( link );
+        mobile = true;
+    }
+   //console.log(100);
+    // alert();
+}
+
+window.onresize = adapt;
+window.onload = adapt;
+
+//   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dinamic </title>
+    <link rel="stylesheet" href="dynamic.css">
+</head>
+<body>
+    <script src="dynamic.js"></script>
+</body>
+</html>
+
+//////////
+
+body{
+    background: red;
+}
+
+////////  dynamic.css
+
+
+
