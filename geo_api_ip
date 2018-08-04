@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="search" name="geoloc" id="geo">
+    <button  onclick="get()">Cauta</button>
+    <div id="out"></div>
+
+
+    <script src="geo_api_input.js"></script>
+</body>
+</html>
+
+///////////////////////
+
+// $.get('https://ipapi.co/8.8.8.8/country/', function (data) {
+//     console.log(data)
+// })
+function get(){
+    var output = document.getElementById('sit').value;
+    if(!navigator.geolocation){
+        output.innerHTML = '<p>Geolocarea voastra nu este posibila, motiv browser</p>';
+        return;
+    }
+    function name(params) {
+        
+    } succes(position){
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+
+        output.innerHTML = "<p>Latitudinea este  " + lat + '<br>' + "<p>Longitudinea este  " + long + '</p>';
+
+        var img = new Image();
+        img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=300x300&sensor=false";
+        
+        output.appendChild(img);
+    }
+    function error() {
+        output.innerHTML = "Unable to retrieve your location";
+    };
+
+    output.innerHTML = "<p>Locating…</p>";
+
+    navigator.geolocation.getCurrentPosition(success, error);
+}
+
+///////////////////////
+function calculate() {
+    var adress_here = document.getElementById('sit').value;
+    var adress = new XMLHttpRequest();
+
+    adress.open("GET",
+        URL + '?q=' + adress_here + '&APPID=' + KEY + '&units=metric');
+
+    adress.onload = function () {
+        var data = JSON.parse(adress.responseText);
+        console.log(data);
+        if (true || data.main.temp) {
+            console.log(data.main.temp);
+            document.getElementById('result').innerHTML = 'Temperatura acum  ' + data.main.temp + '<br>'
+                + 'Umeditatea ' + data.main.humidity + '<br>'
+                + 'Temperatura maxim ' + data.main.temp_max + '<br>'
+                + 'Suflarea vintului ' + data.wind.speed;
+            var result = {  //pastreaza info si o da zilnic inoita
+                sit: adress_here,
+                temp: data.main.temp,
+                humidity: data.main.humidity,
+                temp_max: data.main.temp_max,
+                wind: data.wind.speed,
+            };
+            localStorage.setItem('temper_' + new Date().getTime(), JSON.stringify(result));  //pastreaza info si o da zilnic inoita
+        }
+    }
+    adress.send();
+}
