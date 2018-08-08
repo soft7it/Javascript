@@ -1,0 +1,148 @@
+<body>
+    <h2>write your ip:</h2>
+    <input id="IP1" type="text" maxlength="3" placeholder="000">
+    <input id="IP2" type="text" maxlength="3" placeholder="000">
+    <input id="IP3" type="text" maxlength="3" placeholder="000">
+    <input id="IP4" type="text" maxlength="3" placeholder="000">
+    <br>
+    <br>
+    <button onclick="onInput()">Read IP</button>
+    <button onclick="calculate1()">Start Calculating</button>
+    <button onclick="calculate2()">Start Calcul TEMPERATURA</button>
+    <div id="inform"></div>
+    <br>
+    <br>
+    <div id="inform2"></div>
+
+    <br><br>
+
+    <input type="text" maxlength="12" placeholder="000.000.000.000" id="ip_s">
+    <br>
+    <button onclick="btn_ip">Cheking</button>
+    <br>
+    <div id="result_ip"></div>
+
+   
+    <script src="geoloc_jeton.js"></script>
+
+</body>
+
+</html>
+/////////////
+
+const TOKEN = '63ebbc30d60267';
+
+//const KEY = 'a9e1b02d745043075b9f446a93c06c73';
+
+const URL = 'https://api.openweathermap.org/data/2.5/weather';
+
+const URL_ip = 'ipinfo.io/';
+
+
+document.getElementById("IP1").style.maxWidth = "30px";
+document.getElementById("IP2").style.maxWidth = "30px";
+document.getElementById("IP3").style.maxWidth = "30px";
+document.getElementById("IP4").style.maxWidth = "30px";
+
+var day = new Date().getDate();
+
+function onInput() {
+    function static1() {
+        var ipg1 = document.getElementById('IP1').value;
+        var d = parseInt(ipg1) + 0;
+        return d;
+    };
+
+    function static2() {
+        var ipg2 = document.getElementById('IP2').value;
+        var d = parseInt(ipg2) + 0;
+        return d;
+    };
+    function static3() {
+        var ipg3 = document.getElementById('IP3').value;
+        var d = parseInt(ipg3) + 0;
+        return d;
+    };
+    function static4() {
+        var ipg4 = document.getElementById('IP4').value;
+        var d = parseInt(ipg4) + 0;
+        return d;
+    };
+    var ipar = [static1(), static2(), static3(), static4()];
+
+    return ipar.join('.')
+}
+
+
+function calculate1(cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", URL_ip + onInput() + '/geo'); 
+    
+    xhr.onload = function () {
+        var data = JSON.parse(xhr.responseText);
+        //console.log(data); 
+        var test = data.region;
+        //var test2= data.loc;
+        var temp = new Array();
+        // this will return an array with strings "1", "2", etc.
+        temp = data.loc.split(",");
+        localStorage.setItem('test_' + day, test);
+        localStorage.setItem('temp_' + day, temp);
+        var y = document.getElementById('inform')
+        y.innerHTML = 'regiunea :' + data.region + '<br>' + 'lat:' + temp[0] + '<br>' + 'long:' + temp[1];
+        cb(calculate2());
+    };
+    xhr.send();
+    // return temp; nu-mi reuseste sa returnez valoarea in global
+    // return test;
+};
+
+var x = "47.0178,28.7625";
+var temp1 = x.split(",");
+var latitude = temp1[0];
+var longitude = temp1[1];
+
+const KEY_W = 'a9e1b02d745043075b9f446a93c06c73';
+const URL2 = 'http://api.openweathermap.org/data/2.5/find?';
+
+// CALCULAM TEMPERATURA
+function calculate2() {
+    var xhry = new XMLHttpRequest();
+    xhry.open("GET", URL2 + 'lat=' + latitude + '&' + 'lon=' + longitude + '&cnt=10' + '&APPID=' + KEY_W + '&units=metric');
+    
+    xhry.onload = function () {
+        var datax = JSON.parse(xhry.responseText);
+        // console.log(datax); 
+        var temperature = datax.list[0].main.temp;
+        var locality = datax.list[0].name
+        localStorage.setItem('temperature_' + day, temperature);
+        localStorage.setItem('locality_' + day, locality);
+        var c = document.getElementById('inform2')
+        c.innerHTML = 'In localitatea :' + locality + '<br>' + 'temperatura este :' + temperature;
+
+    };
+    xhry.send();
+};
+//////////
+//var array = prompt('')
+
+// function btn_ip(){
+//     var ip_12 = document.getElementById('ip_s').value;
+//     var ip_address = new XMLHttpRequest();
+
+//     ip_address.open("GET", URL_ip + ip_12 + '/ json /');            //'/geo');
+
+//     ip_address.onload = function(){
+//         var data_ip = JSON.parse(ip_address.responseText);
+//         console.log(data_ip);
+//         // if(true ||data_ip){
+//         //     console.log(data_ip);
+//         //     document.getElementById('result_ip').innerHTML = 
+//         // }
+//     }
+    
+
+// ip_address.send();
+
+
+// }
