@@ -1,0 +1,77 @@
+const KEY = 'a9e1b02d745043075b9f446a93c06c73';
+
+const URL = 'https://api.openweathermap.org/data/2.5/weather';
+
+const URL_ip = 'https://ipapi.co/';
+
+const TOKEN ='63ebbc30d60267';
+
+function calculate(){
+    var adress_here = document.getElementById('sit').value;
+    var adress = new XMLHttpRequest();
+
+    adress.open("GET", 
+    URL + '?q=' + adress_here + '&APPID=' + KEY + '&units=metric');
+
+    adress.onload = function () {
+    var data = JSON.parse(adress.responseText);
+    console.log(data);
+    if( true || data.main.temp ){
+    console.log(data.main.temp);
+    document.getElementById('result').innerHTML = data.main.temp + '<br>' + data.main.humidity;
+    
+    var result = {                
+    sit: adress_here,
+    temp: data.main.temp,
+    time: data.main.temp,
+               };
+    localStorage.setItem('temper_' + new Date().getTime(), JSON.stringify(result));
+           }
+   
+   }
+   adress.send();
+   }
+   //calculate();
+
+function get(){
+    var ip_address = document.getElementById('ip_nr').value;
+    var ip_open = new XMLHttpRequest();
+
+    adress.open('GET', URL_ip + ip_address + '/json/');
+    adress.onload = function (){
+        var ip_loc = JSON.parse(ip_open.responseText);
+        console.log(ip_loc);
+    }
+}
+   ///////////////////
+   
+   <!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Geo Location</title>
+</head>
+
+<body>
+    <br>
+    <input type="number" name="ip_" id="ip_nr">
+
+ <br>
+ <button onclick="get_ip();">Show my IP</button>
+<br>
+ <div id="map"></div>
+ <br>
+ <input id="sit" type="text" placeholder="enter address">
+ <br>
+
+ <button onclick="calculate();">TEMPERATURA</button> 
+ <div id="result"></div> 
+ 
+
+ <script src="calculate.js"></script>
+</body>
+
+</html>
