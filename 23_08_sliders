@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #div1 {
+        font-size: 48px;
+    }
+</style>
+
+
+<body>
+    <!DOCTYPE html>
+    <html>
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    
+    <body>
+    
+        <h2 class="w3-center">Manual Slideshow</h2>
+    
+        <div class="w3-content w3-display-container">
+            <img class="mySlides" src="../templates/Romanian/images/atl1.jpg" style="width:575px; height: 400px;">
+            <img class="mySlides" src="../templates/Romanian/images/atl2.jpg" style="width:575px; height: 400px;">
+            <img class="mySlides" src="../templates/Romanian/images/atl3.jpg" style="width:575px; height: 400px;">
+            <img class="mySlides" src="../templates/Romanian/images/atl4.jpg" style="width:575px; height: 400px;">
+
+             height: 400px;
+
+    
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+    <!-- Slider -->
+        <script>
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel, 2000); // Change image every 2 seconds
+            }
+        </script>
+<!-- Slider -->
+
+<div class="container-fluid">
+    <img src="https://cdn.lyft.com/pagelauncherdatastore/travel.cd068fd8.gif" class="round_gift" alt="An airplane flying around the world"
+        data-reactid="123" />
+    <img src="https://cdn.lyft.com/pagelauncherdatastore/events.3f867ab3.gif" class="round_gift" alt="a beverage being poured"
+        data-reactid="142" />
+    <img src="https://cdn.lyft.com/pagelauncherdatastore/commute.f44ec400.gif" class="round_gift" alt="a briefcase with wheels zooming off"
+        data-reactid="180" />
+    <img src="https://cdn.lyft.com/pagelauncherdatastore/courtesy.450a0ad5.gif" class="round_gift" alt="a concierge bell"
+        data-reactid="218" />
+</div>
+
+    
+   
+
+<div class="w3-content w3-display-container">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836875_417.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836926_419.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836922_420.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836921_422.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836877_423.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836851_430.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836622_3.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836682_3a.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836704_1a.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836664_1aaa.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2016-12/1481836723_11a.png" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028587_06.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028567_05.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028625_atlassib-56.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028700_setra-atl-cu-tel.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028692_atlassib-italia-1.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028671_atlassib-216-mt.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028662_atlassib-zuffen.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028667_11.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028638_atlassib-29.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028769_sprinter-atlassib.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028685_100_2669.jpg" style="width:575px; height: 400px;">    
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028681_sprinter-atlassib-1.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350309092_cafea-ceai.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350309151_confort-1.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350309110_wc-1.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350309120_saun.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350309189_scaun-1.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350309208_confort-2.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028602_atlas1q.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028631_03.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028637_atlassib-italia-4.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028629_09.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028639_atlassib-134-1.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028646_atlas10.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028646_atlassib-italia-3.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028661_08st_atlassib.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028661_atlassib-or.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028662_atlassib-italia-2.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028671_atlassib-216-mt.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028663_atlassib-volvo-zob.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028669_atlas1q-1.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028673_atlassib-222.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028697_atlassib-iarna.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028688_atlassib-super.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028698_547870_341787975903977_2114134690_n.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028699_atlassib-213.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028700_atlassib-zuffen-1.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028709_atlassib-123.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028715_atlassib-oameni-1.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028740_trio.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028725_atlassib-mb12.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028749_atlassib_-_volvo_1024x768.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-09/1349028647_atlassib-mb-210.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310243_08-it.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310242_atlassib-290411.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310245_atlassib-italia-9.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310295_atlassib-italia-8.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310313_atlassib-italia-7.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310346_391400_341787879237320_1694218876_n.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310300_b_13_nxl_187.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310332_b_13_nwp_170.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310335_b_13_nwv__6_445.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310326_2012_07_13_0_3_liderul-transportatorilor-nu-se-zgarceste-atlassib-a-cheltuit-25-milioane-euro-pe-autocare-noi_86088.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310383_atlassib_126_mercedes_tourismo_111.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310351_b_08_vfp__1_584.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310395_b_13_nwf__7_176.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310399_sb06bgt_165.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310449_sb_06_boh_611.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310410_sb_07_boj_468.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310495_sb_05_whu__1_934.jpg" style="width:575px; height: 400px;">
+    <img class="mySlides" src="http://atlassib.md/uploads/posts/2012-10/1350310522_sb_06_fcx_791.jpg" style="width:575px; height: 400px;">
+    </div>
+    
+<!--
+     [thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836875_417.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836926_419.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836922_420.jpg[/thumb]
+    <br
+    /> [thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836921_422.jpg[/thumb]
+    <br /> [thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836877_423.jpg[/thumb]
+    <br /> [thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836851_430.jpg[/thumb]
+    <div style="text-align:center;">[thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836622_3.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836682_3a.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836704_1a.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836664_1aaa.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2016-12/1481836723_11a.png[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028587_06.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028567_05.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028625_atlassib-56.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028700_setra-atl-cu-tel.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028692_atlassib-italia-1.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028671_atlassib-216-mt.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028662_atlassib-zuffen.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028667_11.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028638_atlassib-29.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028769_sprinter-atlassib.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028685_100_2669.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028681_sprinter-atlassib-1.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-10/1350309092_cafea-ceai.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-10/1350309151_confort-1.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-10/1350309110_wc-1.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-10/1350309120_saun.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-10/1350309189_scaun-1.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-10/1350309208_confort-2.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028602_atlas1q.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028631_03.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028637_atlassib-italia-4.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028629_09.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028639_atlassib-134-1.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028646_atlas10.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028646_atlassib-italia-3.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028661_08st_atlassib.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028661_atlassib-or.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028662_atlassib-italia-2.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028671_atlassib-216-mt.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028663_atlassib-volvo-zob.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028669_atlas1q-1.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028673_atlassib-222.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028697_atlassib-iarna.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028688_atlassib-super.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028698_547870_341787975903977_2114134690_n.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028699_atlassib-213.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028700_atlassib-zuffen-1.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028709_atlassib-123.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028715_atlassib-oameni-1.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028740_trio.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028725_atlassib-mb12.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028749_atlassib_-_volvo_1024x768.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-09/1349028647_atlassib-mb-210.jpg[/thumb][thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310243_08-it.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310242_atlassib-290411.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310245_atlassib-italia-9.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310295_atlassib-italia-8.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310313_atlassib-italia-7.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310346_391400_341787879237320_1694218876_n.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310300_b_13_nxl_187.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310332_b_13_nwp_170.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310335_b_13_nwv__6_445.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310326_2012_07_13_0_3_liderul-transportatorilor-nu-se-zgarceste-atlassib-a-cheltuit-25-milioane-euro-pe-autocare-noi_86088.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310383_atlassib_126_mercedes_tourismo_111.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310351_b_08_vfp__1_584.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310395_b_13_nwf__7_176.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310399_sb06bgt_165.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310449_sb_06_boh_611.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310410_sb_07_boj_468.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310495_sb_05_whu__1_934.jpg[/thumb]
+        <br /> [thumb=left]http://atlassib.md/uploads/posts/2012-10/1350310522_sb_06_fcx_791.jpg[/thumb]
+    </div>
+    <div style="text-align:center;">&nbsp;</div>
+    <div style="text-align:center;">
+        <iframe src="http://www.youtube.com/embed/n0ybCgDW2s0?wmode=transparent" style="" title="YouTube video player" width="300"
+            height="225" wmode="Opaque" frameborder="0" allowfullscreen=""></iframe>
+        <br />
+    </div>
+-->
+
+
+   </body>
+
+</html>
